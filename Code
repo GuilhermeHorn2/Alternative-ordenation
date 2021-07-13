@@ -1,0 +1,36 @@
+
+tes = input().split()
+k,t = tes[0],tes[1]
+k = int(k)
+t = int(t)
+n = 0
+try:
+    while True:
+        if t - n == 0:
+            print('Tentativas esgotadas. Acionando defesas...')
+            break
+
+
+        else:
+            h = 0
+            s = input()
+            if int(s) == k:
+                print('Senha reconhecida. Desativando defesas...')
+            if int(s) != k:
+
+                n += 1
+                if len(str(s)) == len(str(k)):
+                    for i in range(len(str(s))):
+                        for j in range(len(str(k))):
+                            if str(s)[i] == str(k)[j] and i == j:
+                                h += 1
+                else:
+                    h = 'Erro: quantidade de digitos incongruente'
+
+                print('Senha incorreta')
+                print('Semelhanca:', h)
+                print('Tentativas restantes:', t - n)
+                print()
+except:
+    pass
+
